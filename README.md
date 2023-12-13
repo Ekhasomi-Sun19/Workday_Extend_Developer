@@ -1,2 +1,6 @@
-# Workday_Extend_Developer
-My job experience as an Application System Engineer Assistant ASE at BYUI is shown in this repo. 
+// Workday Extend Learning Tutorial
+
+https://developer.workday.com/learn 
+login: ekh19001@byui.edu
+password: @#$%_1995_Sunny
+check dua app for 2 factor authentication 
