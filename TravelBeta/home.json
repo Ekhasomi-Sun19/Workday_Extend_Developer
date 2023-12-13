@@ -1,0 +1,50 @@
+{
+    "id": "home",
+    "endPoints": [ ],
+    "presentation": {
+      "title": {
+        "type": "title",
+        "label": "BYUI Travel"
+      },
+      "pageType": "edit",
+      "body": {
+        "type": "section",
+        "horizontal": false,
+        "children": [
+          {
+            "type": "buttonGroup",
+            "label": "Select Employee Type",
+            "action": "PRIMARY",
+            "children": [
+              {
+                "type": "button",
+                "label": "Admin/Staff",
+                "action": "PRIMARY",
+                "taskReference": {
+                  "taskId": "admin_Staff"
+                }
+              },
+              {
+                "type": "button",
+                "label": "Faculty",
+                "action": "PRIMARY",
+                "taskReference": {
+                  "taskId": "faculty"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "footer": {
+        "type": "footer",
+        "children": [
+          {
+            "type": "richText",
+            "enabled": "false",
+            "value": "Powered By Workday Extend"
+          }
+        ]
+      }
+    }
+  }

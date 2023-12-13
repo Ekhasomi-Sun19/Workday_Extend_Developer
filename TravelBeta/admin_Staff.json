@@ -1,0 +1,218 @@
+{
+    "id": "admin_Staff",
+    "endPoints": [ ],
+    "presentation": {
+      "title": {
+        "type": "title",
+        "label": "Admin/Staff Travel"
+      },
+      "pageType": "edit",
+      "body": {
+        "type": "section",
+        "horizontal": false,
+        "children": [
+          {
+            "type": "dropdown",
+            "label": "Is the trip domestic or international?",
+            "id": "q1",
+            "_onChange": "<% displayHardcodedData.value = !empty self.value ? self.value.get(0) : '' %>",
+            "instanceList": [
+              {
+                "id": "q1id1",
+                "descriptor": "Domestic (I:SA-Domestic/International Travel)"
+              },
+              {
+                "id": "q1id2",
+                "descriptor": "International (I:SA-Domestic/International Travel)"
+              }
+            ]
+          },
+          {
+            "type": "textArea",
+            "id": "q2",
+            "label": "List all cities and states to which you will be traveling. NOTE: You do not need to list every city that you will be traveling through.",
+            "enabled": true
+          },
+          {
+            "type": "textArea",
+            "id": "q3",
+            "label": "List all cities and countries to which you will be traveling. Where possible, domestic options that satisfy the outcomes of the activity are preferred.",
+            "enabled": true
+          },
+          {
+            "type": "dropdown",
+            "label": "Is there any personal travel (including before or after the business portion of travel) associated with this trip?",
+            "id": "q4",
+            "_onChange": "<% displayHardcodedData.value = !empty self.value ? self.value.get(0) : '' %>",
+            "instanceList": [
+              {
+                "id": "q4id1",
+                "descriptor": "Yes (I:SA-Personal Travel vs. 2)"
+              },
+              {
+                "id": "q4id2",
+                "descriptor": "No (I:SA-Personal Travel vs. 2)"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "id": "q5",
+            "label": "List personal travel dates",
+            "formatAsDate": "true",
+            "value": "<% '2024-08-05' %>"
+          },
+          {
+            "type": "richText",
+            "id": "q6",
+            "label": "Provide a proposed itinerary for the trip that includes approximate times of departure and return. If international, provide a more detailed itinerary that includes: border crossings, hotel locations, types of transportation, etc..",
+            "value": ""
+          },
+          {
+            "type": "instanceList",
+            "id": "q7",
+            "label": "BYU-Idaho policy requires an approved Spend Authorization before travel arrangements are booked or BYU-Idaho funds committed. Choose from the following booking options.",
+            "multiSelect": "true",
+            "instanceList": [
+              {
+                "id": "q7a1",
+                "descriptor": "Self book through I Travel, BYU-Idaho's Online Booking Tool (Recommended for all Employee Domestic Travel) (I:SA Instructions for Booking Travel Reservations - Employees)"
+              },
+              {
+                "id": "q7a2",
+                "descriptor": "Arrangements made by the Travel Office ext. 2340 (Required for Group travel, international travel, and student travel) (I:SA Instructions for Booking Travel Reservations - Employees)"
+              },
+              {
+                "id": "q7a3",
+                "descriptor": "Booked through the Conference (I:SA Instructions for Booking Travel Reservations - Employees)"
+              },
+              {
+                "id": "q7a4",
+                "descriptor": "Other pre-approved outside source (Contact the Travel Administrator at x1974.) (I:SA Instructions for Booking Travel Reservations - Employees)"
+              }
+            ]
+          },
+          {
+            "type": "instanceList",
+            "id": "q8",
+            "label": "Select all modes of transportation you will use for this trip.",
+            "multiSelect": "true",
+            "instanceList": [
+              {
+                "id": "q8a1",
+                "descriptor": "Air travel (I:SA Transportation vs. 3 (employee))"
+              },
+              {
+                "id": "q8a2",
+                "descriptor": "Bus travel (I:SA Transportation vs. 3 (employee))"
+              },
+              {
+                "id": "q8a3",
+                "descriptor": "Department Vehicle (I:SA Transportation vs. 3 (employee))"
+              },
+              {
+                "id": "q8a4",
+                "descriptor": "University Fleet Vehicle (I:SA Transportation vs. 3 (employee))"
+              },
+              {
+                "id": "q8a5",
+                "descriptor": "Personal Vehicle (I:SA Transportation vs. 3 (employee))"
+              },
+              {
+                "id": "q8a6",
+                "descriptor": "Rental Car (I:SA Transportation vs. 3 (employee))"
+              },
+              {
+                "id": "q8a7",
+                "descriptor": "Shuttle (I:SA Transportation vs. 3 (employee))"
+              },
+              {
+                "id": "q8a8",
+                "descriptor": "Taxi, Uber, Lyft (I:SA Transportation vs. 3 (employee))"
+              },
+              {
+                "id": "q8a9",
+                "descriptor": "Other (I:SA Transportation vs. 3 (employee))"
+              }
+            ]
+          },
+          {
+            "type": "dropdown",
+            "label": "Is this travel associated with faculty professional development activities?",
+            "id": "q8",
+            "_onChange": "<% displayHardcodedData.value = !empty self.value ? self.value.get(0) : '' %>",
+            "instanceList": [
+              {
+                "id": "q8id1",
+                "descriptor": "YES (FACULTY MEMBERS WILL NEED TO CHANGE THE BUSINESS PURPOSE TO I:FACULTY PROFESSIONAL DEVELOPMENT) To make this change, cancel this questionnaire and go back to the Spend Authorization and edit. You will get another questionnaire applicable to faculty professional development. (I:SA Prof Dev - need to change BP)"
+              },
+              {
+                "id": "q8id2",
+                "descriptor": "NO (I:SA Prof Dev - need to change BP)"
+              }
+            ]
+          },
+          {
+            "type": "dropdown",
+            "label": "Will there be any other employees traveling with you? (NOTE: All employees are required to complete their own Spend Authorization.)",
+            "id": "q9",
+            "_onChange": "<% displayHardcodedData.value = !empty self.value ? self.value.get(0) : '' %>",
+            "instanceList": [
+              {
+                "id": "q9id1",
+                "descriptor": "Yes (I:SA-Other Employees Traveling)"
+              },
+              {
+                "id": "q9id2",
+                "descriptor": "No (I:SA-Other Employees Traveling)"
+              }
+            ]
+          },
+          {
+            "type": "textArea",
+            "id": "q10",
+            "label": "List any employees traveling with you.",
+            "enabled": true
+          },
+          {
+            "type": "text",
+            "id": "q11",
+            "label": "Provide your cell phone number so that if necessary, we can reach you while you are traveling.",
+            "format": "###-###-####"
+          },
+          {
+            "type": "dropdown",
+            "label": "Will there be any non-employees traveling with you? (including family members)",
+            "id": "q12",
+            "_onChange": "<% displayHardcodedData.value = !empty self.value ? self.value.get(0) : '' %>",
+            "instanceList": [
+              {
+                "id": "q12id1",
+                "descriptor": "Yes (I:SA-Family or Non-employee travelers?)"
+              },
+              {
+                "id": "q12id2",
+                "descriptor": "No (I:SA-Family or Non-employee travelers?)"
+              }
+            ]
+          },
+          {
+            "type": "textArea",
+            "id": "q13",
+            "label": "List all non-employees traveling with you and their affiliation with the University or yourself.",
+            "enabled": true
+          }
+        ]
+      },
+      "footer": {
+        "type": "footer",
+        "children": [
+          {
+            "type": "richText",
+            "enabled": "false",
+            "value": "Powered By Workday Extend"
+          }
+        ]
+      }
+    }
+  }

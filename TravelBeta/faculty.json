@@ -1,0 +1,238 @@
+{
+    "id": "faculty",
+    "endPoints": [ ],
+    "presentation": {
+      "title": {
+        "type": "title",
+        "label": "Faculty Travel"
+      },
+      "pageType": "edit",
+      "body": {
+        "type": "section",
+        "horizontal": false,
+        "children": [
+          {
+            "type": "textArea",
+            "id": "q1",
+            "label": "Describe your coverage plan for class periods missed.",
+            "enabled": true
+          },
+          {
+            "type": "textArea",
+            "id": "q2",
+            "label": "List all cities and countries to which you will be traveling. Where possible, domestic options that satisfy the outcomes of the activity are preferred.",
+            "enabled": true
+          },
+          {
+            "type": "textArea",
+            "id": "q3",
+            "label": "List all cities and states to which you will be traveling. NOTE: You do not need to list every city that you will be traveling through.",
+            "enabled": true
+          },
+          {
+            "type": "text",
+            "id": "q4",
+            "label": "List a cell phone number where we can reach you while traveling.",
+            "format": "###-###-####"
+          },
+          {
+            "type": "dropdown",
+            "label": "How many class periods will you miss because of this travel?",
+            "id": "q2",
+            "_onChange": "<% displayHardcodedData.value = !empty self.value ? self.value.get(0) : '' %>",
+            "instanceList": [
+              {
+                "id": "q2id1",
+                "descriptor": "0 (I:SA-Number of class periods missed)"
+              },
+              {
+                "id": "q2id2",
+                "descriptor": "1-3 (I:SA-Number of class periods missed)"
+              },
+              {
+                "id": "q2id3",
+                "descriptor": "4-8 (I:SA-Number of class periods missed)"
+              },
+              {
+                "id": "q2id4",
+                "descriptor": "9+ (I:SA-Number of class periods missed)"
+              }
+            ]
+          },
+          {
+            "type": "dropdown",
+            "label": "Is the trip domestic or international?",
+            "id": "q3",
+            "_onChange": "<% displayHardcodedData.value = !empty self.value ? self.value.get(0) : '' %>",
+            "instanceList": [
+              {
+                "id": "q3id1",
+                "descriptor": "Domestic (I:SA-Domestic/International Travel)"
+              },
+              {
+                "id": "q3id2",
+                "descriptor": "International (I:SA-Domestic/International Travel)"
+              }
+            ]
+          },
+          {
+            "type": "dropdown",
+            "label": "Is this travel related to your professional development activities?",
+            "id": "q4",
+            "_onChange": "<% displayHardcodedData.value = !empty self.value ? self.value.get(0) : '' %>",
+            "instanceList": [
+              {
+                "id": "q4id1",
+                "descriptor": "Yes (I:SA-Professional Development)"
+              },
+              {
+                "id": "q4id2",
+                "descriptor": "No (I:SA-Professional Development)"
+              }
+            ]
+          },
+          {
+            "type": "dropdown",
+            "label": "If you anticipate needing to apply for funds beyond your department's professional development budget, have you applied for those funds? (Only respond if applicable)",
+            "id": "q5",
+            "_onChange": "<% displayHardcodedData.value = !empty self.value ? self.value.get(0) : '' %>",
+            "instanceList": [
+              {
+                "id": "q5id1",
+                "descriptor": "Yes (I:SA-Fac Dev Add Funding?)"
+              },
+              {
+                "id": "q5id2",
+                "descriptor": "No (I:SA-Fac Dev Add Funding?)"
+              }
+            ]
+          },
+          {
+            "type": "textArea",
+            "id": "q6",
+            "label": "Describe your coverage plan for class periods missed.",
+            "enabled": true
+          },
+          {
+            "type": "textArea",
+            "id": "q7",
+            "label": "Describe your coverage plan for class periods missed.",
+            "enabled": true
+          },
+          {
+            "type": "textArea",
+            "id": "q8",
+            "label": "Describe your coverage plan for class periods missed.",
+            "enabled": true
+          },
+          {
+            "type": "dropdown",
+            "label": "Is there any personal travel (including before or after the business portion of travel) associated with this trip?",
+            "id": "q9",
+            "_onChange": "<% displayHardcodedData.value = !empty self.value ? self.value.get(0) : '' %>",
+            "instanceList": [
+              {
+                "id": "q9id1",
+                "descriptor": "Yes (I:SA-Personal Travel vs. 2)"
+              },
+              {
+                "id": "q9id2",
+                "descriptor": "No (I:SA-Personal Travel vs. 2)"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "id": "q10",
+            "label": "List personal travel dates",
+            "formatAsDate": "true",
+            "value": "<% '2024-08-05' %>"
+          },
+          {
+            "type": "dropdown",
+            "label": "Will there be any other employees traveling with you?   NOTE: All employees are required to complete their own Spend Authorization.",
+            "id": "q11",
+            "_onChange": "<% displayHardcodedData.value = !empty self.value ? self.value.get(0) : '' %>",
+            "instanceList": [
+              {
+                "id": "q11id1",
+                "descriptor": "Yes (I:SA-Other Employees Traveling)"
+              },
+              {
+                "id": "q11id2",
+                "descriptor": "No (I:SA-Other Employees Traveling)"
+              }
+            ]
+          },
+          {
+            "type": "dropdown",
+            "label": "Will there be any non-employees traveling with you (including family members)?",
+            "id": "q12",
+            "_onChange": "<% displayHardcodedData.value = !empty self.value ? self.value.get(0) : '' %>",
+            "instanceList": [
+              {
+                "id": "q12id1",
+                "descriptor": "Yes (I:SA-Family or Non-employee travelers?)"
+              },
+              {
+                "id": "q12id2",
+                "descriptor": "No (I:SA-Family or Non-employee travelers?)"
+              }
+            ]
+          },
+          {
+            "type": "textArea",
+            "id": "q13",
+            "label": "List all non-employees traveling with you and their affiliation with the University or yourself.",
+            "enabled": true
+          },
+          {
+            "type": "richText",
+            "id": "q14",
+            "label": "Provide a proposed itinerary for the trip that includes approximate times of departure and return. If international, provide a more detailed itinerary that includes: border crossings, hotel locations, types of transportation, etc..",
+            "value": ""
+          },
+          {
+            "type": "instanceList",
+            "id": "q15",
+            "label": "How will you be making your travel arrangements? Check all that apply.",
+            "multiSelect": "true",
+            "instanceList": [
+              {
+                "id": "q15a1",
+                "descriptor": "Self-book through I Travel (BYU-Idaho's Online Booking Tool) (I:SA-Travel Arrangements)"
+              },
+              {
+                "id": "q15a2",
+                "descriptor": "Arrangements made by the Travel Office (ext. 2340) (I:SA-Travel Arrangements)"
+              },
+              {
+                "id": "q15a3",
+                "descriptor": "Booked through the Conference (I:SA Instructions for Booking Travel Reservations - Employees)"
+              },
+              {
+                "id": "q15a4",
+                "descriptor": "Other approved outside source (I:SA-Travel Arrangements)"
+              }
+            ]
+          },
+          {
+            "type": "textArea",
+            "id": "q16",
+            "label": "INSTRUCTIONS FOR TRAVEL OFFICE  ---  Please include any booking requests or additional information for the Travel Office including hotel preference if you have one.",
+            "enabled": true
+          }
+        ]
+      },
+      "footer": {
+        "type": "footer",
+        "children": [
+          {
+            "type": "richText",
+            "enabled": "false",
+            "value": "Powered By Workday Extend"
+          }
+        ]
+      }
+    }
+  }

@@ -1,0 +1,21 @@
+{
+    "id": "travelbeta_brxxgp",
+    "languages": [
+      {
+        "code": "en-US",
+        "description": "English"
+      }
+    ],
+    "siteAuth": {
+      "authTypes": [
+        {
+          "scheme": "SSO",
+          "id": "sso"
+        }
+      ]
+    },
+    "siteId": "travelbeta_brxxgp",
+    "cdnEnabled": true,
+    "siteProperties": [ ],
+    "applicationId": "travelbeta_brxxgp"
+  }

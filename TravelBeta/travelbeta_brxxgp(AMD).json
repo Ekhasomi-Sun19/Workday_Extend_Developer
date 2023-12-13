@@ -1,0 +1,33 @@
+{
+    "appProperties": [ ],
+    "tasks": [
+      {
+        "id": "home",
+        "routingPattern": "/",
+        "page": {
+          "id": "home"
+        }
+      },
+      {
+        "id": "faculty",
+        "routingPattern": "/faculty",
+        "page": {
+          "id": "faculty"
+        }
+      },
+      {
+        "id": "admin_Staff",
+        "routingPattern": "/admin_Staff",
+        "page": {
+          "id": "admin_Staff"
+        }
+      }
+    ],
+    "applicationId": "travelbeta_brxxgp",
+    "dataProviders": [
+      {
+        "key": "faculty",
+        "value": "https://api.workday.com/raas/827300971/EXTEND_Questionnaires_WS_-Business_Travel_1?format=json"
+      }
+    ]
+  }
