@@ -1,0 +1,352 @@
+{
+    "id": "signOnInformation",
+    "endPoints": [
+      {
+        "name": "userSignOn",
+        "baseUrlType": "attemptedSignons",
+        "authType": "sso",
+        "isCollection": "false"
+      },
+      {
+        "name": "SAML",
+        "baseUrlType": "SAML",
+        "authType": "sso",
+        "isCollection": false
+      },
+      {
+        "name": "attemptedSignon",
+        "baseUrlType": "signon",
+        "authType": "sso",
+        "isCollection": false
+      }
+    ],
+    "presentation": {
+      "title": {
+        "type": "title",
+        "label": "Sign on Information"
+      },
+      "tabs": [
+        {
+          "type": "section",
+          "label": "Username and Password",
+          "children": [
+            {
+              "type": "section",
+              "children": [
+                {
+                  "type": "section",
+                  "columnWidthRatios": [0.25, 0.75],
+                  "horizontal": true,
+                  "children": [
+                    {
+                      "type": "section",
+                      "children": [
+                        {
+                          "type": "grid",
+                          "id": "gridgetUserSignOn",
+                          "label": "User Sign On",
+                          "rows": "<% userSignOn.Report_Entry %>",
+                          "autoPaging": true,
+                          "rowVariableName": "row",
+                          "columns": [
+                            {
+                              "type": "column",
+                              "columnId": "User",
+                              "label": "User",
+                              "cellTemplate": {
+                                "type": "text",
+                                "id": "user",
+                                "value": "<% row.System_Account%>"
+                              }
+                            },
+                            {
+                              "type": "column",
+                              "columnId": "Failed_Signon",
+                              "label": "Failed Signon",
+                              "cellTemplate": {
+                                "type": "text",
+                                "id": "failed_Signon",
+                                "value": "<% row.Failed_Signon%>"
+                              }
+                            },
+                            {
+                              "type": "column",
+                              "columnId": "Signon_Time",
+                              "label": "Sign on Time",
+                              "cellTemplate": {
+                                "type": "text",
+                                "id": "Sign-onTime",
+                                "value": "<% row.Sign_on_Time %>"
+                              }
+                            },
+                            {
+                              "type": "column",
+                              "columnId": "Invalid_Credentials",
+                              "label": "Invalid Credentials",
+                              "cellTemplate": {
+                                "type": "text",
+                                "id": "ubInvalidCredentials",
+                                "value": "<% row.Invalid_Credentials%>"
+                              }
+                            },
+                            {
+                              "type": "column",
+                              "columnId": "Account_Locked_Disabled_or_Expired",
+                              "label": "Account Locked Disabled or Expired",
+                              "cellTemplate": {
+                                "type": "text",
+                                "id": "ubAccountLockedDisabledorExpired",
+                                "value": "<% row.Account_Locked__Disabled_or_Expired %>"
+                              }
+                            },
+                            {
+                              "type": "column",
+                              "columnId": "Authentication_Failure_Message",
+                              "label": "Authentication Failure Message",
+                              "cellTemplate": {
+                                "type": "text",
+                                "id": "ubAuthenticationFailureMessage",
+                                "value": "<% row.Authentication_Failure_Message %>"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "section",
+          "label": "SAML",
+          "children": [
+            {
+              "type": "section",
+              "children": [
+                {
+                  "type": "section",
+                  "columnWidthRatios": [
+                    0.25,
+                    0.75
+                  ],
+                  "horizontal": true,
+                  "children": [
+                    {
+                      "type": "grid",
+                      "id": "gridSAML",
+                      "label": "SAML",
+                      "rows": "<% SAML.Report_Entry %>",
+                      "autoPaging": true,
+                      "rowVariableName": "row",
+                      "columns": [
+                        {
+                          "type": "column",
+                          "columnId": "User",
+                          "label": "User",
+                          "cellTemplate": {
+                            "type": "text",
+                            "id": "user",
+                            "value": "<% row.System_Account %>"
+                          }
+                        },
+                        {
+                          "type": "column",
+                          "columnId": "Failed_Signon",
+                          "label": "Failed Signon",
+                          "cellTemplate": {
+                            "type": "text",
+                            "id": "failed_Signon",
+                            "value": "<% row.Failed_Signon%>"
+                          }
+                        },
+                        {
+                          "type": "column",
+                          "columnId": "Account_Locked__Disabled_or_Expired",
+                          "label": "Account Locked Disabled or Expired",
+                          "cellTemplate": {
+                            "type": "text",
+                            "id": "ubAccountLockedDisabledorExpired",
+                            "value": "<% row.Account_Locked__Disabled_or_Expired%>"
+                          }
+                        },
+                        {
+                          "type": "column",
+                          "columnId": "Signon_Time",
+                          "label": "Sign on Time",
+                          "cellTemplate": {
+                            "type": "text",
+                            "id": "Sign-onTime",
+                            "value": "<% row.Sign_on_Time %>"
+                          }
+                        },
+                        {
+                          "type": "column",
+                          "columnId": "Active_Session",
+                          "label": "Active Session",
+                          "cellTemplate": {
+                            "type": "text",
+                            "id": "ActiveSession",
+                            "value": "<% row.Active_Session %>"
+                          }
+                        },
+                        {
+                          "type": "column",
+                          "columnId": "Invalid_Credentials",
+                          "label": "Invalid Credentials",
+                          "cellTemplate": {
+                            "type": "text",
+                            "id": "InvalidCredentials",
+                            "value": "<% row.Invalid_Credentials %>"
+                          }
+                        },
+                        {
+                          "type": "column",
+                          "columnId": "Authentication_Failure_Message",
+                          "label": "Authentication Failure Message",
+                          "cellTemplate": {
+                            "type": "text",
+                            "id": "AuthenticationFailureMessage",
+                            "value": "<% row.Authentication_Failure_Message %>"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "section",
+          "label": "Attempted Signon",
+          "children": [
+            {
+              "type": "section",
+              "children": [
+                {
+                  "type": "section",
+                  "columnWidthRatios": [
+                    0.25,
+                    0.75
+                  ],
+                  "horizontal": true,
+                  "children": [
+                    {
+                      "type": "grid",
+                      "id": "gridattemptedSignon",
+                      "label": "Attempted Signon",
+                      "rows": "<% attemptedSignon.Report_Entry %>",
+                      "autoPaging": true,
+                      "rowVariableName": "row",
+                      "columns": [
+                        {
+                          "type": "column",
+                          "columnId": "User",
+                          "label": "User",
+                          "cellTemplate": {
+                            "type": "text",
+                            "id": "user",
+                            "value": "<% row.System_Account%>"
+                          }
+                        },
+                        {
+                          "type": "column",
+                          "columnId": "Authentication_Type",
+                          "label": "Authentication Type",
+                          "cellTemplate": {
+                            "type": "text",
+                            "id": "Authentication_Type",
+                            "value": "<% row.Authentication_Type%>"
+                          }
+                        },
+                        {
+                          "type": "column",
+                          "columnId": "Failed_Signon",
+                          "label": "Failed Signon",
+                          "cellTemplate": {
+                            "type": "text",
+                            "id": "Failed_Signon",
+                            "value": "<% row.Failed_Signon%>"
+                          }
+                        },
+                        {
+                          "type": "column",
+                          "columnId": "Account_Locked__Disabled_or_Expired",
+                          "label": "Account Locked Disabled or Expired",
+                          "cellTemplate": {
+                            "type": "text",
+                            "id": "Account_Locked__Disabled_or_Expired",
+                            "value": "<% row.Account_Locked__Disabled_or_Expired%>"
+                          }
+                        },
+                        {
+                          "type": "column",
+                          "columnId": "Sign_on_Time",
+                          "label": "Sign on Time",
+                          "cellTemplate": {
+                            "type": "text",
+                            "id": "Sign_on_Time",
+                            "value": "<% row.Sign_on_Time%>"
+                          }
+                        },
+                        {
+                          "type": "column",
+                          "columnId": "Active_Session",
+                          "label": "Active Session",
+                          "cellTemplate": {
+                            "type": "text",
+                            "id": "Active_Session",
+                            "value": "<% row.Active_Session%>"
+                          }
+                        },
+                        {
+                          "type": "column",
+                          "columnId": "Invalid_Credentials",
+                          "label": "Invalid Credentials",
+                          "cellTemplate": {
+                            "type": "text",
+                            "id": "Invalid_Credentials",
+                            "value": "<% row.Invalid_Credentials%>"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "body": {
+        "type": "section",
+        "horizontal": false,
+        "children": [
+          {
+            "type": "button",
+            "action": "PRIMARY",
+            "label": "Return to Home",
+            "taskReference": {
+              "taskId": "home"
+            }
+          }
+        ]
+      },
+      "footer": {
+        "type": "footer",
+        "children": [
+          {
+            "type": "richText",
+            "enabled": "false",
+            "value": "Powered By Workday Extend"
+          }
+        ]
+      }
+    }
+  }
+  
+  

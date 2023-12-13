@@ -1,0 +1,170 @@
+{
+    "id": "BP_Configuration_SecurityChange",
+    "endPoints": [
+      {
+        "name": "Workers",
+        "baseUrlType": "BP_Configuration_SecurityChange",
+        "authType": "sso",
+        "isCollection": "true"
+      }
+    ],
+    "presentation": {
+      "title": {
+        "type": "title",
+        "label": "BP Configuration security Changes"
+      },
+      "pageType": "edit",
+      "body": {
+        "type": "section",
+        "horizontal": false,
+        "children": [
+          {
+            "type": "dropdown",
+            "label": "Does this request require a security change at either the domain, or business process policy level?",
+            "id": "q1",
+            "_onChange": "<% displayHardcodedData.value = !empty self.value ? self.value.get(0) : '' %>",
+            "instanceList": [
+              {
+                "id": "q1id1",
+                "descriptor": "Yes (Security Changes Required)"
+              },
+              {
+                "id": "q1id2",
+                "descriptor": "No (Security Changes Required)"
+              }
+            ]
+          },
+          {
+            "type": "textArea",
+            "id": "q2",
+            "label": "From your perspective, who needs to APPROVE this request? Your 'Request Approver' will review this request and add any necessary Ad-Hoc approvers.",
+            "enabled": true
+          },
+          {
+            "type": "dropdown",
+            "label": "Does this request require a security change at either the domain, or business process policy level?",
+            "id": "q3",
+            "_onChange": "<% displayHardcodedData.value = !empty self.value ? self.value.get(0) : '' %>",
+            "instanceList": [
+              {
+                "id": "q3id1",
+                "descriptor": "FIN (Functional Area(s))"
+              },
+              {
+                "id": "q3id2",
+                "descriptor": "HCM (Functional Area(s))"
+              },
+              {
+                "id": "q3id3",
+                "descriptor": "FIN & HCM (Functional Area(s))"
+              }
+            ]
+          },
+          {
+            "type": "fileUpload",
+            "id": "q4",
+            "label": "Please attach any applicable screenshots or documents.",
+            "enabled": true
+          },
+          {
+            "type": "textArea",
+            "id": "q5",
+            "label": "Please describe the change",
+            "enabled": true
+          },
+          {
+            "type": "textArea",
+            "id": "q6",
+            "label": "What changes were evident in the testing?",
+            "enabled": true
+          },
+          {
+            "type": "dropdown",
+            "label": "What company(s) owns or is affected by this BP change?",
+            "id": "q7",
+            "_onChange": "<% displayHardcodedData.value = !empty self.value ? self.value.get(0) : '' %>",
+            "instanceList": [
+              {
+                "id": "q7id1",
+                "descriptor": "BYU-Hawaii (Company(s))"
+              },
+              {
+                "id": "q7id2",
+                "descriptor": "BYU-Idaho (Company(s))"
+              },
+              {
+                "id": "q7id3",
+                "descriptor": "LDS Business College (Company(s))"
+              },
+              {
+                "id": "q7id4",
+                "descriptor": "Hawaii, Idaho and LDS Business College (Company(s))"
+              }
+            ]
+          },
+          {
+            "type": "dropdown",
+            "label": "What is the level of risk associated with this change?",
+            "id": "q8",
+            "_onChange": "<% displayHardcodedData.value = !empty self.value ? self.value.get(0) : '' %>",
+            "instanceList": [
+              {
+                "id": "q8id1",
+                "descriptor": "High (Risk Level)"
+              },
+              {
+                "id": "q8id2",
+                "descriptor": "Medium (Risk Level)"
+              },
+              {
+                "id": "q8id3",
+                "descriptor": "Low (Risk Level)"
+              },
+              {
+                "id": "q8id4",
+                "descriptor": "None (Risk Level)"
+              }
+            ]
+          },
+          {
+            "type": "textArea",
+            "id": "q9",
+            "label": "Which sandbox environment was this configured and tested in?",
+            "enabled": true
+          },
+          {
+            "type": "textArea",
+            "id": "q10",
+            "label": "Who tested/reviewed this change other than yourself?",
+            "enabled": true
+          },
+          {
+            "type": "instanceList",
+            "label": "User-Based Security Groups WS",
+            "id": "q2",
+            "multiSelect": "true",
+            "idKey": "workdayID",
+            "instanceListLoopTag": {
+              "type": "instanceLoop",
+              "on": "<% security_group.Report_Entry %>",
+              "as": "ds",
+              "templateInstance": {
+                "id": "<% ds.workdayID %>",
+                "descriptor": "<% ds.Group_Name %>"
+              }
+            }
+          }
+        ]
+      },
+      "footer": {
+        "type": "footer",
+        "children": [
+          {
+            "type": "richText",
+            "enabled": "false",
+            "value": "Powered By Workday Extend"
+          }
+        ]
+      }
+    }
+  }

@@ -1,0 +1,49 @@
+{
+    "id": "reviewSecurityChanges",
+    "endPoints": [ ],
+    "presentation": {
+      "headerSize": "VPS_DEFAULT",
+      "title": {
+        "type": "title",
+        "label": "Review Security Changes"
+      },
+      "body": {
+        "type": "section",
+        "horizontal": false,
+        "children": [
+          {
+            "type": "fieldSet",
+            "_title": "grid",
+            "children": [
+              {
+                "type": "button",
+                "action": "LINK",
+                "label": "showRequests",
+                "taskReference": {
+                  "taskId": "showRequests"
+                }
+              },
+              {
+                "type": "button",
+                "action": "LINK",
+                "label": "userBasedSecurityGroupWS",
+                "taskReference": {
+                  "taskId": "userBasedSecurityGroupWS"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "footer": {
+        "type": "footer",
+        "children": [
+          {
+            "type": "richText",
+            "enabled": "false",
+            "value": "Powered By Workday Extend"
+          }
+        ]
+      }
+    }
+  }

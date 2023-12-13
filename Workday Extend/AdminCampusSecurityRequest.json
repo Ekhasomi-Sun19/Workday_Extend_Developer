@@ -1,0 +1,173 @@
+{
+    "id": "AdminCampusSecurityRequest",
+    "endPoints": [
+      {
+        "name": "Workers",
+        "baseUrlType": "AdminCampusSecurityRequest",
+        "authType": "sso",
+        "isCollection": "true"
+      },
+      {
+        "name": "security_group",
+        "baseUrlType": "userBasedSecurityGroupWS",
+        "authType": "sso",
+        "isCollection": "false"
+      }
+    ],
+    "presentation": {
+      "title": {
+        "type": "title",
+        "label": "Admin Campus Security Request Questionnaire"
+      },
+      "pageType": "edit",
+      "body": {
+        "type": "section",
+        "horizontal": false,
+        "children": [
+          {
+            "type": "textArea",
+            "id": "q1",
+            "label": "Cost Center: Which account or cost center should be used?",
+            "enabled": true
+          },
+          {
+            "type": "dropdown",
+            "label": "Is this security replacing another employee's security?",
+            "id": "q2",
+            "_onChange": "<% displayHardcodedData.value = !empty self.value ? self.value.get(0) : '' %>",
+            "instanceList": [
+              {
+                "id": "q2id1",
+                "descriptor": "Yes (Campus Request  - Replacing Security)"
+              },
+              {
+                "id": "q2id2",
+                "descriptor": "No (Campus Request  - Replacing Security)"
+              }
+            ]
+          },
+          {
+            "type": "textArea",
+            "id": "q3",
+            "label": "Please describe the change.",
+            "enabled": true
+          },
+          {
+            "type": "textArea",
+            "id": "q4",
+            "label": "From your perspective, who needs to APPROVE this request? Your BP Admin will review this request and add any necessary Ad-Hoc approvers. ",
+            "enabled": true
+          },
+          {
+            "type": "fileUpload",
+            "id": "q5",
+            "label": "Please attach any applicable screenshots or documents.",
+            "enabled": true
+          },
+          {
+            "type": "dropdown",
+            "label": "What type of security group are you requesting?",
+            "id": "q6",
+            "_onChange": "<% displayHardcodedData.value = !empty self.value ? self.value.get(0) : '' %>",
+            "instanceList": [
+              {
+                "id": "q6id1",
+                "descriptor": "Role-Based (Type of Security Group)"
+              },
+              {
+                "id": "q6id2",
+                "descriptor": "User-Based (Type of Security Group)"
+              },
+              {
+                "id": "q6id3",
+                "descriptor": "Both Role-Based and User-Based (Type of Security Group)"
+              }
+            ]
+          },
+          {
+            "type": "dropdown",
+            "label": "What type of security change are you requesting",
+            "id": "q7",
+            "_onChange": "<% displayHardcodedData.value = !empty self.value ? self.value.get(0) : '' %>",
+            "instanceList": [
+              {
+                "id": "q7id1",
+                "descriptor": "Cost Center Related (Type of Security Change)"
+              },
+              {
+                "id": "q7id2",
+                "descriptor": "I need Sandbox Access (testing/training site access) (Type of Security Change)"
+              },
+              {
+                "id": "q7id3",
+                "descriptor": "Other Security Change (Type of Security Change)"
+              }
+            ]
+          },
+          {
+            "type": "dropdown",
+            "label": "Is this request temporary or ongoing?",
+            "id": "q8",
+            "_onChange": "<% displayHardcodedData.value = !empty self.value ? self.value.get(0) : '' %>",
+            "instanceList": [
+              {
+                "id": "q8id1",
+                "descriptor": "Temporary (Temporary or Ongoing Change)"
+              },
+              {
+                "id": "q8id2",
+                "descriptor": "Ongoing (Temporary or Ongoing Change)"
+              }
+            ]
+          },
+          {
+            "type": "textArea",
+            "id": "q9",
+            "label": "Please supply the employee's information you are replacing.",
+            "enabled": true
+          },
+          {
+            "type": "text",
+            "id": "q10",
+            "label": "Please provide the proposed temporary security end date.",
+            "formatAsDate": "true",
+            "value": "<% '2024-08-05' %>"
+          },
+          {
+            "type": "dropdown",
+            "label": "What is the name and ID number of individual requiring a security change?",
+            "id": "q11",
+            "values": "<% Workers.data %>",
+            "selectedValues": "ad57a2fef01401eefb7c867bfb01cf4c",
+            "valueOutBinding": "flowVariables.secChange"
+          },
+          {
+            "type": "instanceList",
+            "label": "User-Based Security Groups WS",
+            "id": "q2",
+            "multiSelect": "true",
+            "idKey": "workdayID",
+            "instanceListLoopTag": {
+              "type": "instanceLoop",
+              "on": "<% security_group.Report_Entry %>",
+              "as": "ds",
+              "templateInstance": {
+                "id": "<% ds.workdayID %>",
+                "descriptor": "<% ds.Group_Name %>"
+              }
+            }
+          }
+        ]
+      },
+      "footer": {
+        "type": "footer",
+        "children": [
+          {
+            "type": "richText",
+            "enabled": "false",
+            "value": "Powered By Workday Extend"
+          }
+        ]
+      }
+    }
+  }

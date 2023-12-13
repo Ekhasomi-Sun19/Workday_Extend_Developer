@@ -1,0 +1,21 @@
+{
+    "id": "securityAudit_brxxgp",
+    "languages": [
+      {
+        "code": "en-US",
+        "description": "English"
+      }
+    ],
+    "siteAuth": {
+      "authTypes": [
+        {
+          "scheme": "SSO",
+          "id": "sso"
+        }
+      ]
+    },
+    "siteId": "securityAudit_brxxgp",
+    "cdnEnabled": true,
+    "siteProperties": [ ],
+    "applicationId": "securityAudit_brxxgp"
+  }

@@ -1,0 +1,48 @@
+{
+    "id": "putInRequest",
+    "endPoints": [ ],
+    "presentation": {
+      "title": {
+        "type": "title",
+        "label": "Create Request"
+      },
+      "body": {
+        "type": "section",
+        "horizontal": false,
+        "children": [
+          {
+            "type": "button",
+            "id": "btnAdminCampusSecurityRequest",
+            "action": "PRIMARY",
+            "commandHttpMethod": "GET",
+            "label": "Admin Campus Security Request Questionnaire",
+            "taskReference": {
+              "type": "taskReference",
+              "taskId": "AdminCampusSecurityRequest"
+            }
+          },
+          {
+            "type": "button",
+            "id": "BP_Configuration_SecurityChange",
+            "action": "PRIMARY",
+            "commandHttpMethod": "GET",
+            "label": "BP Configuration Security Change",
+            "taskReference": {
+              "type": "taskReference",
+              "taskId": "BP_Configuration_SecurityChange"
+            }
+          }
+        ]
+      },
+      "footer": {
+        "type": "footer",
+        "children": [
+          {
+            "type": "richText",
+            "enabled": "false",
+            "value": "Powered By Workday Extend"
+          }
+        ]
+      }
+    }
+  }

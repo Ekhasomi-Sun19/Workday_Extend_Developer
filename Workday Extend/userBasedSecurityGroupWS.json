@@ -1,0 +1,50 @@
+{
+    "id": "userBasedSecurityGroupWS",
+    "endPoints": [
+      {
+        "name": "security_group",
+        "baseUrlType": "userBasedSecurityGroupWS",
+        "authType": "sso",
+        "isCollection": "false"
+      }
+    ],
+    "presentation": {
+      "title": {
+        "type": "title",
+        "label": "User-Based Security Groups WS"
+      },
+      "pageType": "edit",
+      "body": {
+        "type": "section",
+        "horizontal": false,
+        "children": [
+          {
+            "type": "instanceList",
+            "label": "User-Based Security Groups WS",
+            "id": "q2",
+            "multiSelect": "true",
+            "idKey": "workdayID",
+            "instanceListLoopTag": {
+              "type": "instanceLoop",
+              "on": "<% security_group.Report_Entry %>",
+              "as": "ds",
+              "templateInstance": {
+                "id": "<% ds.workdayID %>",
+                "descriptor": "<% ds.Group_Name %>"
+              }
+            }
+          }
+        ]
+      },
+      "footer": {
+        "type": "footer",
+        "children": [
+          {
+            "type": "richText",
+            "enabled": "false",
+            "value": "Powered By Workday Extend"
+          }
+        ]
+      }
+    }
+  }

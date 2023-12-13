@@ -1,0 +1,83 @@
+{
+    "id": "showUserBasedSecurityReport",
+    "endPoints": [
+      {
+        "name": "getUserBasedEntries",
+        "baseUrlType": "getRaaSAddedUserBasedSecurity",
+        "authType": "sso",
+        "isCollection": "false"
+      }
+    ],
+    "presentation": {
+      "title": {
+        "type": "title",
+        "label": "User-Based Changes"
+      },
+      "body": {
+        "type": "section",
+        "horizontal": false,
+        "children": [
+          {
+            "type": "grid",
+            "id": "gridAllUserbasedChanges",
+            "label": "User Based Security Changes",
+            "rows": "<% getUserBasedEntries.Report_Entry %>",
+            "autoPaging": true,
+            "rowVariableName": "row",
+            "columns": [
+              {
+                "type": "column",
+                "columnId": "TargetSecurityGroupColumnId",
+                "label": "Target Security Group",
+                "cellTemplate": {
+                  "type": "text",
+                  "id": "ubTargetSecurityGroup",
+                  "value": "<% row.Target_Security_Group %>"
+                }
+              },
+              {
+                "type": "column",
+                "columnId": "TransactionDateColumnId",
+                "label": "Transaction Date",
+                "cellTemplate": {
+                  "type": "text",
+                  "id": "ubTransactionDate",
+                  "value": "<% row.Transaction_Date %>"
+                }
+              },
+              {
+                "type": "column",
+                "columnId": "ByUserColumnId",
+                "label": "By User",
+                "cellTemplate": {
+                  "type": "text",
+                  "id": "ubByUser",
+                  "value": "<% row.By_User %>"
+                }
+              },
+              {
+                "type": "column",
+                "columnId": "TargetAccountColumnId",
+                "label": "Target Account",
+                "cellTemplate": {
+                  "type": "text",
+                  "id": "ubTargetAccount",
+                  "value": "<% row.Target_Account %>"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "footer": {
+        "type": "footer",
+        "children": [
+          {
+            "type": "richText",
+            "enabled": "false",
+            "value": "Powered By Workday Extend"
+          }
+        ]
+      }
+    }
+  }

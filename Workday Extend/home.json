@@ -1,0 +1,463 @@
+{
+    "id": "home",
+    "endPoints": [
+      {
+        "name": "getRequestEntries",
+        "baseUrlType": "getSecRequest",
+        "url": "/requests?requestType=98c2cf47487801cb984de16beb010981&requestType=4d3f3b7a789f01f45ed66a82a20114d3&requestType=4d3f3b7a789f01582faefdafa10171d1",
+        "authType": "sso",
+        "isCollection": "false"
+      },
+      {
+        "name": "getUserBasedEntries",
+        "baseUrlType": "getRaaSAddedUserBasedSecurity",
+        "authType": "sso",
+        "isCollection": "false"
+      },
+      {
+        "name": "getBPSecurityPoliciesAndChangesImproved",
+        "baseUrlType": "getBPSecurityPoliciesAndChangesImproved",
+        "authType": "sso",
+        "isCollection": false
+      },
+      {
+        "name": "security_group",
+        "baseUrlType": "userBasedSecurityGroupWS",
+        "authType": "sso",
+        "isCollection": "false"
+      },
+      {
+        "name": "domain_changes",
+        "baseUrlType": "getDomainChanges",
+        "authType": "sso",
+        "isCollection": "false"
+      },
+      {
+        "name": "integration_changes",
+        "baseUrlType": "getIntegrationChanges",
+        "authType": "sso",
+        "isCollection": "false"
+      }   
+    ],
+    "presentation": {
+      "title": {
+        "type": "title",
+        "label": "Request Framework"
+      },
+      "tabs": [
+        {
+          "type": "section",
+          "label": "User-Based Security",
+          "children": [
+            {
+              "type": "section",
+              "children": [
+                {
+                  "type": "section",
+                  "columnWidthRatios": [
+                    0.25,
+                    0.75
+                  ],
+                  "horizontal": true,
+                  "children": [
+                    {
+                      "type": "section",
+                      "children": [
+                        {
+                          "type": "grid",
+                          "id": "gridAllUserbasedChanges",
+                          "label": "User Based Security Changes",
+                          "rows": "<% getUserBasedEntries.Report_Entry %>",
+                          "autoPaging": true,
+                          "rowVariableName": "row",
+                          "columns": [
+                            {
+                              "type": "column",
+                              "columnId": "TargetSecurityGroupColumnId",
+                              "label": "Target Security Group",
+                              "cellTemplate": {
+                                "type": "text",
+                                "id": "ubTargetSecurityGroup",
+                                "value": "<% row.Target_Security_Group %>"
+                              }
+                            },
+                            {
+                              "type": "column",
+                              "columnId": "TransactionDateColumnId",
+                              "label": "Transaction Date",
+                              "cellTemplate": {
+                                "type": "text",
+                                "id": "ubTransactionDate",
+                                "value": "<% row.Transaction_Date %>"
+                              }
+                            },
+                            {
+                              "type": "column",
+                              "columnId": "ByUserColumnId",
+                              "label": "By User",
+                              "cellTemplate": {
+                                "type": "text",
+                                "id": "ubByUser",
+                                "value": "<% row.By_User %>"
+                              }
+                            },
+                            {
+                              "type": "column",
+                              "columnId": "TargetAccountColumnId",
+                              "label": "Target Account",
+                              "cellTemplate": {
+                                "type": "text",
+                                "id": "ubTargetAccount",
+                                "value": "<% row.Target_Account %>"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "section",
+          "label": "BP Changes",
+          "children": [
+            {
+              "type": "section",
+              "children": [
+                {
+                  "type": "section",
+                  "columnWidthRatios": [
+                    0.25,
+                    0.75
+                  ],
+                  "horizontal": true,
+                  "children": [
+                    {
+                      "type": "section",
+                      "children": [
+                        {
+                          "type": "grid",
+                          "id": "gridBPSecurityPoliciesAndChangesImproved",
+                          "label": "BP Security Polices And Changes Improved",
+                          "rows": "<% getBPSecurityPoliciesAndChangesImproved.Report_Entry %>",
+                          "autoPaging": true,
+                          "rowVariableName": "row",
+                          "columns": [
+                            {
+                              "type": "column",
+                              "columnId": "TransactionDateColumnId",
+                              "label": "Transaction Date",
+                              "cellTemplate": {
+                                "type": "text",
+                                "id": "ubTransactionDate",
+                                "value": "<% row.Transaction_Date %>"
+                              }
+                            },
+                            {
+                              "type": "column",
+                              "columnId": "ByUserColumnId",
+                              "label": "By user",
+                              "cellTemplate": {
+                                "type": "text",
+                                "id": "ubByUser",
+                                "value": "<% row.By_User %>"
+                              }
+                            },
+                            {
+                              "type": "column",
+                              "columnId": "TaskColumnId",
+                              "label": "Task",
+                              "cellTemplate": {
+                                "type": "text",
+                                "id": "ubTask",
+                                "value": "<% row.Task %>"
+                              }
+                            },
+                            {
+                              "type": "column",
+                              "columnId": "EventSecurityPolicyPermissionColumnId",
+                              "label": "Event Security Policy Permission",
+                              "cellTemplate": {
+                                "type": "text",
+                                "id": "ubEventSecurityPolicyPermission",
+                                "value": "<% row.Event_Security_Policy_Permission %>"
+                              }
+                            },
+                            {
+                              "type": "column",
+                              "columnId": "IntersectionSecurityGroupsColumnId",
+                              "label": "Intersection Security Groups",
+                              "cellTemplate": {
+                                "type": "text",
+                                "id": "ubIntersectionSecurityGroups",
+                                "value": "<% row.Intersection_Security_Groups %>"
+                              }
+                            },
+                            {
+                              "type": "column",
+                              "columnId": "Role-BasedSecurityGroups(Constrained)ColumnId",
+                              "label": "Role-Based Security Groups (Constrained)",
+                              "cellTemplate": {
+                                "type": "text",
+                                "id": "ubRole-BasedSecurityGroups(Constrained)",
+                                "value": "<% row['Role-BasedSecurityGroups(Constrained)'] %>"
+                              }
+                            },
+                            {
+                              "type": "column",
+                              "columnId": "Self_Contingent_Worker_GroupColumnId",
+                              "label": "Self_Contingent_Worker_Group",
+                              "cellTemplate": {
+                                "type": "text",
+                                "id": "ubSelf_Contingent_Worker_Group",
+                                "value": "<% row.Self_Contingent_Worker_Group %>"
+                              }
+                            },
+                            {
+                              "type": "column",
+                              "columnId": "Allowed_ActionColumnId",
+                              "label": "Allowed_Action",
+                              "cellTemplate": {
+                                "type": "text",
+                                "id": "ubAllowed_Action",
+                                "value": "<% row.Allowed_Action %>"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "section",
+          "label": "Domain Changes",
+          "children": [
+            {
+              "type": "section",
+              "children": [
+                {
+                  "type": "section",
+                  "columnWidthRatios": [
+                    0.25,
+                    0.75
+                  ],
+                  "horizontal": true,
+                  "children": [
+                    {
+                      "type": "section",
+                      "children": [
+                        {
+                          "type": "grid",
+                          "id": "gridAllUserbasedChanges",
+                          "label": "Domain Changes",
+                          "rows": "<%domain_changes.Report_Entry %>",
+                          "autoPaging": true,
+                          "rowVariableName": "row",
+                          "columns": [
+                            {
+                              "type": "column",
+                              "columnId": "User",
+                              "label": "User",
+                              "cellTemplate": {
+                                "type": "text",
+                                "id": "user",
+                                "value": "<% row.By_User%>"
+                              }
+                            },
+                            {
+                              "type": "column",
+                              "columnId": "Domain",
+                              "label": "Domain",
+                              "cellTemplate": {
+                                "type": "text",
+                                "id": "domain",
+                                "value": "<%row.Domain%>"
+                              }
+                            },
+                            {
+                              "type": "column",
+                              "columnId": "Transaction",
+                              "label": "Date",
+                              "cellTemplate": {
+                                "type": "text",
+                                "id": "date",
+                                "value": "<%row.Transaction_Date%>"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "section",
+          "label": "Integration Changes",
+          "children": [
+            {
+              "type": "section",
+              "children": [
+                {
+                  "type": "section",
+                  "columnWidthRatios": [
+                    0.25,
+                    0.75
+                  ],
+                  "horizontal": true,
+                  "children": [
+                    {
+                      "type": "grid",
+                      "id": "gridgetIntegrationChanges",
+                      "label": "Integration Changes",
+                      "rows": "<% integration_changes.Report_Entry %>",
+                      "autoPaging": true,
+                      "rowVariableName": "row",
+                      "columns": [
+                        {
+                          "type": "column",
+                          "columnId": "User",
+                          "label": "User",
+                          "cellTemplate": {
+                            "type": "text",
+                            "id": "user",
+                            "value": "<% row.By_User%>"
+                          }
+                        },
+                        {
+                          "type": "column",
+                          "columnId": "Integration",
+                          "label": "Integration System",
+                          "cellTemplate": {
+                            "type": "text",
+                            "id": "integration",
+                            "value": "<% row.Integration_System%>"
+                          }
+                        },
+                        {
+                          "type": "column",
+                          "columnId": "Instance",
+                          "label": "Instance Updated",
+                          "cellTemplate": {
+                            "type": "text",
+                            "id": "instance",
+                            "value": "<% row.Instances_Updated%>"
+                          }
+                        },
+                        {
+                          "type": "column",
+                          "columnId": "Transaction",
+                          "label": "Transaction Date",
+                          "cellTemplate": {
+                            "type": "text",
+                            "id": "transaction",
+                            "value": "<% row.Transaction_Date%>"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "body": {
+        "type": "section",
+        "horizontal": false,
+        "children": [
+          {
+            "type": "button",
+            "action": "PRIMARY",
+            "label": "Login Information",
+            "taskReference": {
+              "taskId": "signOnInformation"
+            }
+          },
+          {
+            "type": "grid",
+            "id": "gridAllReq",
+            "label": "Requests",
+            "rows": "<% getRequestEntries.data %>",
+            "autoPaging": true,
+            "rowVariableName": "row",
+            "columns": [
+              {
+                "type": "column",
+                "columnId": "idColumnId",
+                "label": "WID",
+                "cellTemplate": {
+                  "type": "text",
+                  "id": "reqWID",
+                  "value": "<% row.id %>"
+                }
+              },
+              {
+                "type": "column",
+                "columnId": "dateColumnId",
+                "label": "Request Date",
+                "cellTemplate": {
+                  "type": "date",
+                  "id": "reqDate",
+                  "value": "<% row.requestDate %>"
+                }
+              },
+              {
+                "type": "column",
+                "columnId": "descColumnId",
+                "label": "Description",
+                "cellTemplate": {
+                  "type": "text",
+                  "id": "reqDesc",
+                  "value": "<% row.description %>"
+                }
+              },
+              {
+                "type": "column",
+                "columnId": "initiatorColumnId",
+                "label": "Initiator",
+                "cellTemplate": {
+                  "type": "text",
+                  "id": "reqInitiator",
+                  "value": "<% row.initiator.descriptor %>"
+                }
+              },
+              {
+                "type": "column",
+                "columnId": "requestTypeColumnId",
+                "label": "Request Type",
+                "cellTemplate": {
+                  "type": "text",
+                  "id": "reqType",
+                  "value": "<% row.requestType.descriptor %>"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "footer": {
+        "type": "footer",
+        "children": [
+          {
+            "type": "richText",
+            "enabled": "false",
+            "value": "Powered By Workday Extend"
+          }
+        ]
+      }
+    }
+  }

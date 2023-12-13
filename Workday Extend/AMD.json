@@ -1,0 +1,170 @@
+{
+    "appProperties": [],
+    "tasks": [
+      {
+        "id": "home",
+        "routingPattern": "/",
+        "page": {
+          "id": "home"
+        }
+      },
+      {
+        "id": "showRequests",
+        "routingPattern": "/showRequests",
+        "page": {
+          "id": "showRequests"
+        }
+      },
+      {
+        "id": "showSecReq",
+        "routingPattern": "/securityRequests",
+        "page": {
+          "id": "showSecurityRequests"
+        }
+      },
+      {
+        "id": "showUserBasedSecurityReport",
+        "routingPattern": "/showUserBasedSecurityReport",
+        "page": {
+          "id": "showUserBasedSecurityReport"
+        }
+      },
+      {
+        "id": "getBPChange",
+        "routingPattern": "/bpChange",
+        "page": {
+          "id": "getBPChange"
+        }
+      },
+      {
+        "id": "AdminCampusSecurityRequest",
+        "routingPattern": "/AdminCampusSecurityRequest",
+        "page": {
+          "id": "AdminCampusSecurityRequest"
+        }
+      },
+      {
+        "id": "showSecurityRequests",
+        "routingPattern": "/showSecurityRequests",
+        "page": {
+          "id": "showSecurityRequests"
+        }
+      },
+      {
+        "id": "getBPSecurityPoliciesAndChangesImproved",
+        "routingPattern": "/getBPSecurityPoliciesAndChangesImproved",
+        "page": {
+          "id": "getBPSecurityPoliciesAndChangesImproved"
+        }
+      },
+      {
+        "id": "userBasedSecurityGroupWS",
+        "routingPattern": "/userBasedSecurityGroupWS",
+        "page": {
+          "id": "userBasedSecurityGroupWS"
+        }
+      },
+      {
+        "id": "reviewSecurityChanges",
+        "routingPattern": "/reviewSecurityChanges",
+        "page": {
+          "id": "reviewSecurityChanges"
+        }
+      },
+      {
+        "id": "BP_Configuration_SecurityChange",
+        "routingPattern": "/BP_Configuration_SecurityChange",
+        "page": {
+          "id": "BP_Configuration_SecurityChange"
+        }
+      },
+      {
+        "id": "requestAndUserBaseSecurity",
+        "routingPattern": "/requestAndUserBaseSecurity",
+        "page": {
+          "id": "requestAndUserBaseSecurity"
+        }
+      },
+      {
+        "id": "putInRequest",
+        "routingPattern": "/putInRequest",
+        "page": {
+          "id": "putInRequest"
+        }
+      },
+      {
+        "id": "signOnInformation",
+        "routingPattern": "/signOnInformation",
+        "page": {
+          "id": "signOnInformation"
+        }
+      }
+    ],
+    "applicationId": "securityAudit_brxxgp",
+    "dataProviders": [
+      {
+        "key": "getSecRequest",
+        "value": "https://api.workday.com/request/v2"
+      },
+      {
+        "key": "createSecRequest",
+        "value": "https://api.workday.com/request/v1/requests"
+      },
+      {
+        "key": "attemptedSignons",
+        "value": "https://api.workday.com/raas/827300971/Username_and_password_Signons_and_Attempted_Signons_For_This_Week"
+      },
+      {
+        "key": "SAML",
+        "value": "https://api.workday.com/raas/827300971/SAML_Signons_and_Attempted_Signons_For_This_Week"
+      },
+      {
+        "key": "signon",
+        "value": "https://api.workday.com/raas/827300971/Other__Signons_and_Attempted_Signons_For_This_Week"
+      },
+      {
+        "key": "getBPChange",
+        "value": "https://api.workday.com/privacy/v1/activityLogging?to=2023-03-15&from=2023-01-01&taskId=dc3f3582446c11de98360015c5e6daf6&taskId=dc308398446c11de98360015c5e6daf6&taskId=dc2e8dfe446c11de98360015c5e6daf6"
+      },
+      {
+        "key": "getAddUserBasedSecurityChanges",
+        "value": "https://api.workday.com/privacy/v1/activityLogging?to=2023-03-15&from=2023-01-01&taskId=dc3f2ba0446c11de98360015c5e6daf6&taskId=dc49b84a446c11de98360015c5e6daf6"
+      },
+      {
+        "key": "getIntegrationChanges",
+        "value": "https://api.workday.com/raas/827300971/Integration_Changes"
+      },
+      {
+        "key": "AdminCampusSecurityRequest",
+        "value": "https://api.workday.com/common/v1/workers"
+      },
+      {
+        "key": "userBasedSecurityGroupWS",
+        "value": "https://api.workday.com/raas/827300971/User-Based_Security_Groups_WS"
+      },
+      {
+        "key": "getDomainChanges",
+        "value": "https://api.workday.com/raas/827300971/Domain_Changes_V2"
+      },
+      {
+        "key": "getBPSecPoliciesAndChanges",
+        "value": "https://api.workday.com/privacy/v1/activityLogging?to=2023-03-15&from=2023-01-01&taskId=dc33b8a6446c11de98360015c5e6daf6"
+      },
+      {
+        "key": "getTenantSetupChanges",
+        "value": "https://api.workday.com/privacy/v1/activityLogging?to=2023-03-15&from=2023-01-01&taskId=35382c414f3140e9bc738121e6f6f68f&taskId=736462d238da10000e99e96146dd000b&taskId=337f68ca81d74b3ea12ddf55b9e5bfce&taskId=271dfc08c82d459ea0e6ccdc0acc6e99&taskId=09c2a7039ba34e9ebc546f8ac2c67cf0"
+      },
+      {
+        "key": "getRaaSAddedUserBasedSecurity",
+        "value": "https://api.workday.com/raas/827300971/Added_User_Based_Security_V2?format=json"
+      },
+      {
+        "key": "getBPSecurityPoliciesAndChangesImproved",
+        "value": "https://api.workday.com/raas/827300971/Business_Process_Security_Policies_and_Changes_Improved_V2?format=json"
+      },
+      {
+        "key": "BP_Configuration_SecurityChange",
+        "value": "https://services1.myworkday.com/ccx/service/customreport2/byuhi/827300971/EXTEND_Questionnaires_WS?Questionnaire%21WID=98c2cf4748780168d5ab2162eb01e180&format=json"
+      }
+    ]
+  }

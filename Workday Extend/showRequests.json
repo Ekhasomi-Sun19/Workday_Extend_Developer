@@ -1,0 +1,94 @@
+{
+    "id": "showRequests",
+    "endPoints": [
+      {
+        "name": "getRequestEntries",
+        "baseUrlType": "getSecRequest",
+        "url": "/requests?requestType=98c2cf47487801cb984de16beb010981&requestType=4d3f3b7a789f01f45ed66a82a20114d3&requestType=4d3f3b7a789f01582faefdafa10171d1",
+        "authType": "sso",
+        "isCollection": "false"
+      }
+    ],
+    "presentation": {
+      "title": {
+        "type": "title",
+        "label": "Requests"
+      },
+      "body": {
+        "type": "section",
+        "horizontal": false,
+        "children": [
+          {
+            "type": "grid",
+            "id": "gridAllReq",
+            "label": "Requests",
+            "rows": "<% getRequestEntries.data %>",
+            "autoPaging": true,
+            "rowVariableName": "row",
+            "columns": [
+              {
+                "type": "column",
+                "columnId": "idColumnId",
+                "label": "WID",
+                "cellTemplate": {
+                  "type": "text",
+                  "id": "reqWID",
+                  "value": "<% row.id %>"
+                }
+              },
+              {
+                "type": "column",
+                "columnId": "dateColumnId",
+                "label": "Request Date",
+                "cellTemplate": {
+                  "type": "date",
+                  "id": "reqDate",
+                  "value": "<% row.requestDate %>"
+                }
+              },
+              {
+                "type": "column",
+                "columnId": "descColumnId",
+                "label": "Description",
+                "cellTemplate": {
+                  "type": "text",
+                  "id": "reqDesc",
+                  "value": "<% row.description %>"
+                }
+              },
+              {
+                "type": "column",
+                "columnId": "initiatorColumnId",
+                "label": "Initiator",
+                "cellTemplate": {
+                  "type": "text",
+                  "id": "reqInitiator",
+                  "value": "<% row.initiator.descriptor %>"
+                }
+              },
+              {
+                "type": "column",
+                "columnId": "requestTypeColumnId",
+                "label": "Request Type",
+                "cellTemplate": {
+                  "type": "text",
+                  "id": "reqType",
+                  "value": "<% row.requestType.descriptor %>"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "footer": {
+        "type": "footer",
+        "children": [
+          {
+            "type": "richText",
+            "enabled": "false",
+            "value": "Powered By Workday Extend"
+          }
+        ]
+      }
+    }
+  }
