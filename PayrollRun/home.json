@@ -1,0 +1,76 @@
+{
+    "id": "home",
+    "endPoints": [
+      {
+        "name": "companies",
+        "baseUrlType": "getCompany",
+        "authType": "sso",
+        "isCollection": "true"
+      },
+      {
+        "name": "payGroup",
+        "baseUrlType": "payGroups",
+        "authType": "sso",
+        "isCollection": false
+      }
+    ],
+    "presentation": {
+      "pageType": "edit",
+      "title": {
+        "type": "title",
+        "label": "Payroll Run"
+      },
+      "body": {
+        "type": "section",
+        "horizontal": false,
+        "children": [
+          {
+            "type": "text",
+            "id": "gridgetCompany",
+            "label": "Company",
+            "row": "<% getCompany.data %>",
+            "autoPaging": true,
+            "rowVariableName": "row",
+            "columns": [
+              {}
+            ]
+          },
+          {
+            "type": "instanceList",
+            "label": "Company",
+            "idKey": "id",
+            "displayKey": "descriptor",
+            "values": "<% companies.data %>"
+          },
+          {
+            "type": "text",
+            "id": "gridpayGroups",
+            "label": "pay Groups",
+            "rows": "<% payGroups.data %>",
+            "autoPaging": true,
+            "rowVariableName": "row",
+            "columns": [
+              {}
+            ]
+          },
+          {
+            "type": "instanceList",
+            "label": "pay Group",
+            "idKey": "id",
+            "displayKey": "descriptor",
+            "values": "<% payGroup.data %>"
+          }
+        ]
+      },
+      "footer": {
+        "type": "footer",
+        "children": [
+          {
+            "type": "richText",
+            "enabled": "false",
+            "value": "Powered By Workday Extend"
+          }
+        ]
+      }
+    }
+  }

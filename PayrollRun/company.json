@@ -1,0 +1,52 @@
+{
+    "id": "company",
+    "endPoints": [
+      {
+        "name": "companies",
+        "baseUrlType": "getCompany",
+        "authType": "sso",
+        "isCollection": "true"
+      }
+    ],
+    "presentation": {
+      "pageType": "edit",
+      "title": {
+        "type": "title",
+        "label": "Company"
+      },
+      "body": {
+        "type": "section",
+        "horizontal": false,
+        "children": [
+          {
+            "type": "text",
+            "id": "gridgetCompany",
+            "label": "Company",
+            "row": "<% getCompany.data %>",
+            "autoPaging": true,
+            "rowVariableName": "row",
+            "columns": [
+              { }
+            ]
+          },
+          {
+            "type": "instanceList",
+            "label": "Company",
+            "idKey": "id",
+            "displayKey": "descriptor",
+            "values": "<% companies.data %>"
+          }
+        ]
+      },
+      "footer": {
+        "type": "footer",
+        "children": [
+          {
+            "type": "richText",
+            "enabled": "false",
+            "value": "Powered By Workday Extend"
+          }
+        ]
+      }
+    }
+  }

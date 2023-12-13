@@ -1,0 +1,37 @@
+{
+    "appProperties": [],
+    "tasks": [
+      {
+        "id": "home",
+        "routingPattern": "/",
+        "page": {
+          "id": "home"
+        }
+      },
+      {
+        "id": "company",
+        "routingPattern": "/company",
+        "page": {
+          "id": "company"
+        }
+      },
+      {
+        "id": "payGroup",
+        "routingPattern": "/payGroup",
+        "page": {
+          "id": "payGroup"
+        }
+      }
+    ],
+    "applicationId": "payrollRun_brxxgp",
+    "dataProviders": [
+      {
+        "key": "getCompany",
+        "value": "https://api.workday.com/common/v1/organizations?organizationType=3334d2f14e961082f8d79348e966acac"
+      },
+      {
+        "key": "payGroups",
+        "value": "https://api.workday.com/payroll/v2/payGroups"
+      }
+    ]
+  }

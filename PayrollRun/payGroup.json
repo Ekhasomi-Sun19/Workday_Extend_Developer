@@ -1,0 +1,53 @@
+{
+    "id": "payGroup",
+    "endPoints": [
+      {
+        "name": "payGroup",
+        "baseUrlType": "payGroups",
+        "authType": "sso",
+        "isCollection": false
+      }
+    ],
+    "presentation": {
+      "pageType": "edit",
+      "title": {
+        "type": "title",
+        "label": "Pay Groups"
+      },
+      "body": {
+        "type": "section",
+        "horizontal": false,
+        "children": [
+          {
+            "type": "text",
+            "id": "gridpayGroups",
+            "label": "Pay Groups",
+            "rows": "<% payGroups.data %>",
+            "autoPaging": true,
+            "rowVariableName": "row",
+            "columns": [
+              {}
+            ]
+          },
+          {
+            "type": "instanceList",
+            "label": "Pay Group",
+            "idKey": "id",
+            "displayKey": "descriptor",
+            "values": "<% payGroup.data %>"
+          }
+        ]
+      },
+      "footer": {
+        "type": "footer",
+        "children": [
+          {
+            "type": "richText",
+            "enabled": "false",
+            "value": "Powered By Workday Extend"
+          }
+        ]
+      }
+    }
+  }
+  
